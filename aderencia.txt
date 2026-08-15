@@ -1,0 +1,43 @@
+## Home Page
+
+Botão Buscar Missões
+ - Possui a tag html button e o texto "Buscar Missões", o que já é o suficiente para construir um bom locator.
+
+Checkbox de bases lunares
+ - Possui texto no Span na qual eu consigo identificar a base e com /.. do xpath posso chegar no label para clicar no botão.
+
+Caixa de seleção para ordenar data de Missões
+ - Select simples do html com options e também possui um id
+
+
+## Página de Resultados (/missions)
+
+Botão refinar
+ - Possui a tag html button e o texto "Refinar", o que já é suficiente para construir um bom locator.
+
+ - O filtro de bases lunares já tem id
+ - Ordenar por está usando select padrão do html
+
+ OBS: Seria muito melhor padronizar os elementos de caixa de seleção de opções conforme o exemplo do filtro de bases lunares da página /missions. É mais elegante e tem um design mais sofisticado.
+
+Lista de Missões
+Item de cada missão
+
+ - A lista de missões é representada por uma UL, seria ótimo se cada li tiver uma propridade com uma informação relacionada ao código da missão.
+ - Título ok, usa um h3
+ - Descrição ok, usa um p
+ - Data de ida e volta, ruim porque é um span pobre e sem graça, poderia ter um id
+ - Estadia, ruim porque é um span pobre e sem graça, poderia ter um id
+ - Disponibilidade de assentos, também é muito ruim, poderia ter um id
+ - O botão reservar possui no atributo href o código da missão (a[href="/booking/LP-0127A"]) o que torna o processo de automação, muito simples.
+
+ Caixa de resultado quando nenhuma missão é encontrada.
+
+ - Verificar se é acessível para testes automatizados, e se é possível adicionar algum identificador.
+
+ ## Página da missão (/booking/LP-0127A)
+
+  - Os botões de escolha de assento, já tem aria-label com informações relevantes. Se der para melhorar ok.
+  - Ao fazer hover em um assento, o popover que mostra informações do assento escolhido não está acessível também. Melhorar isso com urgência.
+  - A side de resumo não tem indentificador para nenhuma das informações.
+  - Na sessão de reserva confirmada, cada informação relevante da passagem pode ter um identificador exclusivo. Isso vai facilitar muito as verificações.

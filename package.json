@@ -1,0 +1,23 @@
+{
+  "name": "lunarpass-tests",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.2.0"
+  },
+  "scripts": {
+    "test": "yarn playwright test",
+    "test:ui": "yarn playwright test --ui",
+    "test:ch": "yarn playwright test --project=chromium",
+    "test:debug": "yarn playwright test --debug",
+    "test:cod": "yarn playwright codegen",
+    "go": "claude",
+    "router": "9router"
+  },
+  "dependencies": {
+    "9router": "^0.5.50",
+    "@anthropic-ai/claude-code": "^2.1.228"
+  }
+}
