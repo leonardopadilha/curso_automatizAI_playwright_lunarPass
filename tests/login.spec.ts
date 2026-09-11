@@ -1,57 +1,39 @@
 import { test, expect } from '@playwright/test'
+import { LoginPage } from '../pages/login.page'
+
+let loginPage: LoginPage
+
+test.beforeEach(async ({ page }) => {
+    loginPage = new LoginPage(page)
+    await loginPage.go()
+})
 
 test('Deve autenticar no controle de missões', async ({ page }) => {
-    await page.goto('http://localhost:3000/mission-control/login')
-
-    // Checkpoint
-    const title = page.getByRole('heading', { name: 'Mission Control' })
-    await expect(title).toBeVisible()
-
-    //await page.locator('input[type=email]').fill('buzz@lunarpass.dev')
-    //await page.locator('input[type=password]').fill('pwd123')
-
-    await page.getByLabel('E-mail').fill('buzz@lunarpass.dev')
-    await page.getByLabel('Senha').fill('pwd123')
-    await page.getByRole('button', { name: 'Entrar'} ).click()
-
-    const logoutButton = await page.getByRole('button', { name: 'Sair' })
-    await expect(logoutButton).toBeVisible()
+    await loginPage.login('buzz@lunarpass.dev', 'pwd123')
+    await loginPage.isLoggedUser()
 })
 
 test('Não deve autenticar com senha incorreta', async ({ page }) => {
-    await page.goto('http://localhost:3000/mission-control/login')
-
-    // Checkpoint
-    const title = page.getByRole('heading', { name: 'Mission Control' })
-    await expect(title).toBeVisible()
-
-    //await page.locator('input[type=email]').fill('buzz@lunarpass.dev')
-    //await page.locator('input[type=password]').fill('pwd123')
-
-    await page.getByLabel('E-mail').fill('buzz@lunarpass.dev')
-    await page.getByLabel('Senha').fill('abc123')
-    await page.getByRole('button', { name: 'Entrar'} ).click()
-
-    const text = page.getByText('E-mail ou senha inválidos.')
-    await expect(text).toBeVisible()
-
+    await loginPage.login('buzz@lunarpass.dev', 'abc123')
+    await expect(loginPage.alert).toHaveText('E-mail ou senha inválidos.')
 })
 
 test('Não deve autenticar com email não cadastrado', async ({ page }) => {
-    await page.goto('http://localhost:3000/mission-control/login')
+    await loginPage.login('404@lunarpass.dev', 'pwd123')
+    await expect(loginPage.alert).toHaveText('E-mail ou senha inválidos.')
+})
 
-    // Checkpoint
-    const title = page.getByRole('heading', { name: 'Mission Control' })
-    await expect(title).toBeVisible()
+test('Não deve autenticar quando a senha não é informada', async ({ page }) => {
+    await loginPage.login('404@lunarpass.dev', '')
+    await expect(loginPage.alert).toHaveText('Informe a senha')
+})
 
-    //await page.locator('input[type=email]').fill('buzz@lunarpass.dev')
-    //await page.locator('input[type=password]').fill('pwd123')
+test('Não deve autenticar quando o email não é informada', async ({ page }) => {
+    await loginPage.login('', 'pwd123')
+    await expect(loginPage.alert).toHaveText('Informe um e-mail válido')
+})
 
-    await page.getByLabel('E-mail').fill('404@lunarpass.dev')
-    await page.getByLabel('Senha').fill('pwd123')
-    await page.getByRole('button', { name: 'Entrar'} ).click()
-
-    const text = page.getByText('E-mail ou senha inválidos.')
-    await expect(text).toBeVisible()
-
+test('Não deve autenticar quando não informo email nem senha', async ({ page }) => {
+    await loginPage.login('', '')
+    await expect(loginPage.alert).toHaveText('Informe um e-mail válido')
 })
