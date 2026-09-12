@@ -2,6 +2,8 @@ import { test, expect } from '@playwright/test'
 import { LoginPage } from '../pages/login.page'
 import { Navbar } from '../pages/components/navbar'
 
+import { faker } from '@faker-js/faker'
+
 let loginPage: LoginPage
 let navbar: Navbar
 
@@ -11,14 +13,15 @@ test.beforeEach(async ({ page }) => {
 
     await loginPage.go()
     await loginPage.login('buzz@lunarpass.dev', 'pwd123')
-    await expect(navbar.logout).toBeVisible()
+    await expect(navbar.logout).toBeVisible({ timeout: 10_0000 })
 })
 
 test('deve cadastrar uma nova missão', async ({ page }) => {
   await page.getByRole('link', { name: 'Nova missão' }).click()
   await expect(page.getByRole('heading', { name: 'Programar missão' })).toBeVisible()
 
-  await page.getByRole('textbox', { name: 'ID da missão' }).fill('LP-2801A')
+  const missionId = `LP-${faker.string.alphanumeric({ length: { min: 5, max: 5 }, casing: 'upper' })}`
+  await page.getByRole('textbox', { name: 'ID da missão' }).fill(missionId)
   await page.getByRole('textbox', { name: 'Foguete' }).fill('Starship')
   await page.getByLabel('Base lunar').selectOption('aurora')
   await page.getByRole('textbox', { name: 'Data de partida' }).fill('2028-01-20')
