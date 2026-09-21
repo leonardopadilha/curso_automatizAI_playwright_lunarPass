@@ -3,6 +3,7 @@ import { LoginPage } from '../pages/login.page'
 import { Navbar } from '../pages/components/navbar'
 
 import { faker } from '@faker-js/faker'
+import { Mission } from '../support/mission'
 
 let loginPage: LoginPage
 let navbar: Navbar
@@ -18,7 +19,7 @@ test.beforeEach(async ({ page }) => {
 
 test('deve cadastrar uma nova missão', async ({ page }) => {
 
-  const mission = {
+  const mission: Mission = {
     id: `LP-${faker.string.alphanumeric({ length: { min: 5, max: 5 }, casing: 'upper' })}`,
     rocket: 'Starship',
     lunarBase: 'aurora',
