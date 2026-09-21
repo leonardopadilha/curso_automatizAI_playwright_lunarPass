@@ -17,16 +17,25 @@ test.beforeEach(async ({ page }) => {
 })
 
 test('deve cadastrar uma nova missão', async ({ page }) => {
+
+  const mission = {
+    id: `LP-${faker.string.alphanumeric({ length: { min: 5, max: 5 }, casing: 'upper' })}`,
+    rocket: 'Starship',
+    lunarBase: 'aurora',
+    departureDate: '2028-01-20',
+    returnDate: '27 de jan. de 2028',
+    price: '1000'
+  }
+
   await page.getByRole('link', { name: 'Nova missão' }).click()
   await expect(page.getByRole('heading', { name: 'Programar missão' })).toBeVisible()
 
-  const missionId = `LP-${faker.string.alphanumeric({ length: { min: 5, max: 5 }, casing: 'upper' })}`
-  await page.getByRole('textbox', { name: 'ID da missão' }).fill(missionId)
-  await page.getByRole('textbox', { name: 'Foguete' }).fill('Starship')
-  await page.getByLabel('Base lunar').selectOption('aurora')
-  await page.getByRole('textbox', { name: 'Data de partida' }).fill('2028-01-20')
-  await expect(page.getByTestId('mission-form-return-date')).toContainText('27 de jan. de 2028')
-  await page.getByRole('spinbutton', { name: 'Preço por passagem (USD)' }).fill('1000')
+  await page.getByRole('textbox', { name: 'ID da missão' }).fill(mission.id)
+  await page.getByRole('textbox', { name: 'Foguete' }).fill(mission.rocket)
+  await page.getByLabel('Base lunar').selectOption(mission.lunarBase)
+  await page.getByRole('textbox', { name: 'Data de partida' }).fill(mission.departureDate)
+  await expect(page.getByTestId('mission-form-return-date')).toContainText(mission.returnDate)
+  await page.getByRole('spinbutton', { name: 'Preço por passagem (USD)' }).fill(mission.price)
   
   await page.getByRole('button', { name: 'Salvar missão' }).click()
   await expect(page.getByRole('listitem')).toContainText('Missão programadaA nova missão foi adicionada ao catálogo e já está disponível para reservas.')
