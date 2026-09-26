@@ -17,8 +17,6 @@ let registerPage: RegisterPage
 let navbar: Navbar
 let toast: Toast
 
-const MESSAGE = 'Use o formato LP-0000'
-
 test.beforeEach(async ({ page }) => {
     loginPage = new LoginPage(page)
     dashPage = new DashPage(page)
@@ -46,7 +44,7 @@ test('deve cadastrar uma nova missão', async ({ page }) => {
   await dashPage.addButton.click()
   await expect(registerPage.title).toBeVisible()
   await registerPage.submit(mission)
-  await expect(toast.message).toContainText(MESSAGE)
+  await expect(toast.message).toContainText("A nova missão foi adicionada ao catálogo e já está disponível para reservas.")
 })
 
 test('não deve cadastrar com código de missão incorreto', async ({ page }) => {
@@ -63,5 +61,22 @@ test('não deve cadastrar com código de missão incorreto', async ({ page }) =>
   await dashPage.addButton.click()
   await expect(registerPage.title).toBeVisible()
   await registerPage.submit(mission)
-  await expect(registerPage.alert).toHaveText(MESSAGE)
+  await expect(registerPage.alert).toHaveText('Use o formato LP-0000')
+})
+
+test('não deve cadastrar com código duplicado', async ({ page }) => {
+
+  const mission: Mission = {
+    id: 'LP-0127A',
+    rocket: 'Starship',
+    lunarBase: 'aurora',
+    departureDate: '2028-01-20',
+    returnDate: '27 de jan. de 2028',
+    price: '1000'
+  }
+
+  await dashPage.addButton.click()
+  await expect(registerPage.title).toBeVisible()
+  await registerPage.submit(mission)
+  await expect(registerPage.alert).toHaveText('Já existe uma missão com este ID.')
 })
