@@ -9,6 +9,7 @@ import { Navbar } from '../pages/components/navbar'
 import { Toast } from '../pages/components/toast'
 
 import { Mission } from '../support/mission'
+import { insertMission, deleteMission, deleteReservation, deleteTicket } from '../support/db'
 
 let loginPage: LoginPage
 let dashPage: DashPage
@@ -67,13 +68,18 @@ test('não deve cadastrar com código de missão incorreto', async ({ page }) =>
 test('não deve cadastrar com código duplicado', async ({ page }) => {
 
   const mission: Mission = {
-    id: 'LP-0127A',
+    id: 'LP-DUP01',
     rocket: 'Starship',
     lunarBase: 'aurora',
     departureDate: '2028-01-20',
     returnDate: '27 de jan. de 2028',
     price: '1000'
   }
+
+  await deleteReservation(mission.id)
+  await deleteTicket(mission.id)
+  await deleteMission(mission.id)
+  await insertMission(mission.id)
 
   await dashPage.addButton.click()
   await expect(registerPage.title).toBeVisible()
