@@ -1,0 +1,1 @@
+Crie uma função TypeScript que receba uma data no formato AAAA-MM-DD e retorne na seguinte forma: 17 de jan. de 2027
