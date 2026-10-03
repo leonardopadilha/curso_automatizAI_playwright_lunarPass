@@ -9,7 +9,7 @@ import { Navbar } from '../pages/components/navbar'
 import { Toast } from '../pages/components/toast'
 
 import { Mission } from '../support/types'
-import { insertMission, deleteMission, deleteReservation, deleteTicket } from '../support/db'
+import { cleanMission, cleanAndInsertMission } from '../support/db'
 
 let loginPage: LoginPage
 let dashPage: DashPage
@@ -42,9 +42,7 @@ test('deve cadastrar uma nova missão', async ({ page }) => {
     price: 1000.00
   }
 
-  await deleteReservation(mission.id)
-  await deleteTicket(mission.id)
-  await deleteMission(mission.id)
+  await cleanMission(mission)
 
   await dashPage.addButton.click()
   await expect(registerPage.title).toBeVisible()
@@ -80,10 +78,7 @@ test('não deve cadastrar com código duplicado', async ({ page }) => {
     price: 1000.00
   }
 
-  await deleteReservation(mission.id)
-  await deleteTicket(mission.id)
-  await deleteMission(mission.id)
-  await insertMission(mission)
+  await cleanAndInsertMission(mission)
 
   await dashPage.addButton.click()
   await expect(registerPage.title).toBeVisible()
