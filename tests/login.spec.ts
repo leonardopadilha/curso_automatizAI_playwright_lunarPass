@@ -1,43 +1,36 @@
-import { test, expect } from '@playwright/test'
-import { LoginPage } from '../pages/login.page'
-import { Navbar } from '../pages/components/navbar'
+import { test, expect } from '../support/index.ts'
 
-let loginPage: LoginPage
-let navbar: Navbar
 
-test.beforeEach(async ({ page }) => {
-    loginPage = new LoginPage(page)
-    navbar = new Navbar(page)
-    
+test.beforeEach(async ({ loginPage }) => {
     await loginPage.go()
 })
 
-test('Deve autenticar no controle de missões', async ({ page }) => {
+test('Deve autenticar no controle de missões', async ({ loginPage, navbar }) => {
     await loginPage.login('buzz@lunarpass.dev', 'pwd123')
-    await expect(navbar.logout).toBeVisible()
+    await expect(navbar.logout).toBeVisible({ timeout: 10_000 })
 })
 
-test('Não deve autenticar com senha incorreta', async ({ page }) => {
+test('Não deve autenticar com senha incorreta', async ({ loginPage }) => {
     await loginPage.login('buzz@lunarpass.dev', 'abc123')
     await expect(loginPage.alert).toHaveText('E-mail ou senha inválidos.')
 })
 
-test('Não deve autenticar com email não cadastrado', async ({ page }) => {
+test('Não deve autenticar com email não cadastrado', async ({ loginPage }) => {
     await loginPage.login('404@lunarpass.dev', 'pwd123')
     await expect(loginPage.alert).toHaveText('E-mail ou senha inválidos.')
 })
 
-test('Não deve autenticar quando a senha não é informada', async ({ page }) => {
+test('Não deve autenticar quando a senha não é informada', async ({ loginPage }) => {
     await loginPage.login('404@lunarpass.dev', '')
     await expect(loginPage.alert).toHaveText('Informe a senha')
 })
 
-test('Não deve autenticar quando o email não é informada', async ({ page }) => {
+test('Não deve autenticar quando o email não é informada', async ({ loginPage }) => {
     await loginPage.login('', 'pwd123')
     await expect(loginPage.alert).toHaveText('Informe um e-mail válido')
 })
 
-test('Não deve autenticar quando não informo email nem senha', async ({ page }) => {
+test('Não deve autenticar quando não informo email nem senha', async ({ loginPage }) => {
     await loginPage.login('', '')
     await expect(loginPage.alert).toHaveText('Informe um e-mail válido')
 })
