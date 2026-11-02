@@ -1,0 +1,157 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e116]:
+    - banner [ref=e117]:
+      - generic [ref=e118]:
+        - link "Lunar Pass" [ref=e119] [cursor=pointer]:
+          - /url: /
+        - navigation [ref=e122]:
+          - link "Missões" [ref=e123] [cursor=pointer]:
+            - /url: /missions
+          - link "Bases" [ref=e124] [cursor=pointer]:
+            - /url: /#bases
+    - generic [ref=e126]:
+      - link "Voltar" [ref=e127] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e130]:
+        - generic [ref=e131]:
+          - paragraph [ref=e132]: Resultados
+          - heading "6 missões disponíveis" [level=1] [ref=e133]
+        - generic [ref=e134]:
+          - generic [ref=e136]:
+            - generic [ref=e137]: Bases lunares
+            - button "Bases lunares" [ref=e138] [cursor=pointer]:
+              - generic [ref=e139]: Todas as bases
+          - generic [ref=e143]:
+            - generic [ref=e144] [cursor=pointer]: Ordenar por
+            - combobox "Ordenar por" [ref=e145]:
+              - option "Missão mais próxima" [selected]
+              - option "Missão mais distante"
+          - button "Refinar" [ref=e146] [cursor=pointer]
+    - list [ref=e148]:
+      - listitem [ref=e149]:
+        - img "Base Lunar Alpha" [ref=e151]
+        - generic [ref=e152]:
+          - generic [ref=e153]:
+            - generic [ref=e154]: LP-0127A
+            - generic [ref=e156]: Foguete Starship
+          - heading "Base Lunar Alpha" [level=3] [ref=e157]
+          - paragraph [ref=e158]: Mar da Tranquilidade
+          - generic [ref=e159]:
+            - generic [ref=e160]: 10 de jan. de 2027 → 17 de jan. de 2027
+            - generic [ref=e164]:
+              - generic [ref=e165]: Estadia
+              - generic [ref=e166]: 7 dias
+            - generic [ref=e167]: 4 / 4 assentos
+        - generic [ref=e174]:
+          - generic [ref=e175]:
+            - paragraph [ref=e176]: a partir de
+            - paragraph [ref=e177]: USD 1,000.00
+            - paragraph [ref=e178]: por passageiro
+          - link "Reservar" [ref=e179] [cursor=pointer]:
+            - /url: /booking/LP-0127A
+      - listitem [ref=e182]:
+        - img "Base Lunar Orion" [ref=e184]
+        - generic [ref=e185]:
+          - generic [ref=e186]:
+            - generic [ref=e187]: LP-0127B
+            - generic [ref=e189]: Foguete Starship
+          - heading "Base Lunar Orion" [level=3] [ref=e190]
+          - paragraph [ref=e191]: Cratera Copernicus
+          - generic [ref=e192]:
+            - generic [ref=e193]: 24 de jan. de 2027 → 31 de jan. de 2027
+            - generic [ref=e197]:
+              - generic [ref=e198]: Estadia
+              - generic [ref=e199]: 7 dias
+            - generic [ref=e200]: 4 / 4 assentos
+        - generic [ref=e207]:
+          - generic [ref=e208]:
+            - paragraph [ref=e209]: a partir de
+            - paragraph [ref=e210]: USD 1,000.00
+            - paragraph [ref=e211]: por passageiro
+          - link "Reservar" [ref=e212] [cursor=pointer]:
+            - /url: /booking/LP-0127B
+      - listitem [ref=e215]:
+        - img "Base Lunar Aurora" [ref=e217]
+        - generic [ref=e218]:
+          - generic [ref=e219]:
+            - generic [ref=e220]: LP-0827A
+            - generic [ref=e222]: Foguete Starship
+          - heading "Base Lunar Aurora" [level=3] [ref=e223]
+          - paragraph [ref=e224]: Polo Sul Lunar
+          - generic [ref=e225]:
+            - generic [ref=e226]: 08 de ago. de 2027 → 15 de ago. de 2027
+            - generic [ref=e230]:
+              - generic [ref=e231]: Estadia
+              - generic [ref=e232]: 7 dias
+            - generic [ref=e233]: 4 / 4 assentos
+        - generic [ref=e240]:
+          - generic [ref=e241]:
+            - paragraph [ref=e242]: a partir de
+            - paragraph [ref=e243]: USD 1,000.00
+            - paragraph [ref=e244]: por passageiro
+          - link "Reservar" [ref=e245] [cursor=pointer]:
+            - /url: /booking/LP-0827A
+      - listitem [ref=e248]:
+        - img "Base Lunar Selene" [ref=e250]
+        - generic [ref=e251]:
+          - generic [ref=e252]:
+            - generic [ref=e253]: LP-0827B
+            - generic [ref=e255]: Foguete Starship
+          - heading "Base Lunar Selene" [level=3] [ref=e256]
+          - paragraph [ref=e257]: Vale Taurus-Littrow
+          - generic [ref=e258]:
+            - generic [ref=e259]: 22 de ago. de 2027 → 29 de ago. de 2027
+            - generic [ref=e263]:
+              - generic [ref=e264]: Estadia
+              - generic [ref=e265]: 7 dias
+            - generic [ref=e266]: 4 / 4 assentos
+        - generic [ref=e273]:
+          - generic [ref=e274]:
+            - paragraph [ref=e275]: a partir de
+            - paragraph [ref=e276]: USD 1,000.00
+            - paragraph [ref=e277]: por passageiro
+          - link "Reservar" [ref=e278] [cursor=pointer]:
+            - /url: /booking/LP-0827B
+      - listitem [ref=e281]:
+        - img "Base Lunar Aurora" [ref=e283]
+        - generic [ref=e284]:
+          - generic [ref=e285]:
+            - generic [ref=e286]: LP-0128A
+            - generic [ref=e288]: Foguete Starship
+          - heading "Base Lunar Aurora" [level=3] [ref=e289]
+          - paragraph [ref=e290]: Polo Sul Lunar
+          - generic [ref=e291]:
+            - generic [ref=e292]: 20 de jan. de 2028 → 27 de jan. de 2028
+            - generic [ref=e296]:
+              - generic [ref=e297]: Estadia
+              - generic [ref=e298]: 7 dias
+            - generic [ref=e299]: 4 / 4 assentos
+        - generic [ref=e306]:
+          - generic [ref=e307]:
+            - paragraph [ref=e308]: a partir de
+            - paragraph [ref=e309]: USD 1,000.00
+            - paragraph [ref=e310]: por passageiro
+          - link "Reservar" [ref=e311] [cursor=pointer]:
+            - /url: /booking/LP-0128A
+      - listitem [ref=e314]:
+        - img "Base Lunar Aurora" [ref=e316]
+        - generic [ref=e317]:
+          - generic [ref=e318]:
+            - generic [ref=e319]: LP-DUP01
+            - generic [ref=e321]: Foguete Starship
+          - heading "Base Lunar Aurora" [level=3] [ref=e322]
+          - paragraph [ref=e323]: Polo Sul Lunar
+          - generic [ref=e324]:
+            - generic [ref=e325]: 20 de jan. de 2028 → 27 de jan. de 2028
+            - generic [ref=e329]:
+              - generic [ref=e330]: Estadia
+              - generic [ref=e331]: 7 dias
+            - generic [ref=e332]: 4 / 4 assentos
+        - generic [ref=e339]:
+          - generic [ref=e340]:
+            - paragraph [ref=e341]: a partir de
+            - paragraph [ref=e342]: USD 1,000.00
+            - paragraph [ref=e343]: por passageiro
+          - link "Reservar" [ref=e344] [cursor=pointer]:
+            - /url: /booking/LP-DUP01
+  - region "Notifications alt+T"

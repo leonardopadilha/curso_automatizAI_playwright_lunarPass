@@ -1,0 +1,95 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "Lunar Pass" [ref=e5] [cursor=pointer]:
+          - /url: /
+        - navigation [ref=e8]:
+          - link "Missões" [ref=e9] [cursor=pointer]:
+            - /url: /missions
+          - link "Bases" [ref=e10] [cursor=pointer]:
+            - /url: /#bases
+    - generic [ref=e11]:
+      - img "Lua vista do espaço profundo" [ref=e12]
+      - generic [ref=e14]:
+        - paragraph [ref=e15]: Turismo espacial
+        - heading "Sua viagem para a Lua começa aqui." [level=1] [ref=e16]
+        - paragraph [ref=e17]: Sua próxima grande história começa na Lua. Viaje com a Lunar Pass e viva sete dias verdadeiramente inesquecíveis.
+        - generic [ref=e18]:
+          - group "Bases lunares" [ref=e20]:
+            - generic [ref=e22]:
+              - generic [ref=e23] [cursor=pointer]:
+                - checkbox "Base Lunar Alpha" [ref=e24]
+                - generic [ref=e26]: Base Lunar Alpha
+              - generic [ref=e27] [cursor=pointer]:
+                - checkbox "Base Lunar Orion" [ref=e28]
+                - generic [ref=e30]: Base Lunar Orion
+              - generic [ref=e31] [cursor=pointer]:
+                - checkbox "Base Lunar Aurora" [ref=e32]
+                - generic [ref=e34]: Base Lunar Aurora
+              - generic [ref=e35] [cursor=pointer]:
+                - checkbox "Base Lunar Selene" [ref=e36]
+                - generic [ref=e38]: Base Lunar Selene
+          - generic [ref=e40]:
+            - generic [ref=e41] [cursor=pointer]: Ordenar por
+            - combobox "Ordenar por" [ref=e42]:
+              - option "Missão mais próxima" [selected]
+              - option "Missão mais distante"
+          - button "Buscar missões" [ref=e43] [cursor=pointer]
+        - generic [ref=e46]:
+          - generic [ref=e47]: · 4 bases lunares
+          - generic [ref=e48]: · Frota própria
+          - generic [ref=e49]: · 7 dias na Lua
+    - generic [ref=e51]:
+      - generic [ref=e52]:
+        - generic [ref=e53]: 384~
+        - generic [ref=e54]: km até a Lua
+      - generic [ref=e55]:
+        - generic [ref=e56]: 72h~
+        - generic [ref=e57]: de Viagem
+      - generic [ref=e58]:
+        - generic [ref=e59]: "4"
+        - generic [ref=e60]: bases lunares
+      - generic [ref=e61]:
+        - generic [ref=e62]: "4"
+        - generic [ref=e63]: assentos por foguete
+    - generic [ref=e64]:
+      - generic [ref=e66]:
+        - paragraph [ref=e67]: Bases lunares
+        - heading "Quatro bases. Um mesmo horizonte." [level=2] [ref=e68]: Quatro bases.Um mesmo horizonte.
+      - generic [ref=e69]:
+        - link [ref=e70] [cursor=pointer]:
+          - /url: /missions?base=alpha
+          - img "Base Lunar Alpha" [ref=e72]
+          - generic [ref=e74]:
+            - paragraph [ref=e75]: Mar da Tranquilidade
+            - heading "Base Lunar Alpha" [level=3] [ref=e76]
+            - generic [ref=e77]: Ver missões
+        - link [ref=e80] [cursor=pointer]:
+          - /url: /missions?base=orion
+          - img "Base Lunar Orion" [ref=e82]
+          - generic [ref=e84]:
+            - paragraph [ref=e85]: Cratera Copernicus
+            - heading "Base Lunar Orion" [level=3] [ref=e86]
+            - generic [ref=e87]: Ver missões
+        - link [ref=e90] [cursor=pointer]:
+          - /url: /missions?base=aurora
+          - img "Base Lunar Aurora" [ref=e92]
+          - generic [ref=e94]:
+            - paragraph [ref=e95]: Polo Sul Lunar
+            - heading "Base Lunar Aurora" [level=3] [ref=e96]
+            - generic [ref=e97]: Ver missões
+        - link [ref=e100] [cursor=pointer]:
+          - /url: /missions?base=selene
+          - img "Base Lunar Selene" [ref=e102]
+          - generic [ref=e104]:
+            - paragraph [ref=e105]: Vale Taurus-Littrow
+            - heading "Base Lunar Selene" [level=3] [ref=e106]
+            - generic [ref=e107]: Ver missões
+    - contentinfo [ref=e110]:
+      - generic [ref=e111]:
+        - generic [ref=e112]: © 2026 Lunar Pass · Turismo espacial
+        - generic [ref=e113]:
+          - generic [ref=e114]: Alcântara · Brasil
+          - generic [ref=e115]: Termos de Uso
+  - region "Notifications alt+T"

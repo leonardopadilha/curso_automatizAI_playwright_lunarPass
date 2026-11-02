@@ -1,0 +1,53 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e116]:
+    - banner [ref=e117]:
+      - generic [ref=e118]:
+        - link "Lunar Pass" [ref=e119] [cursor=pointer]:
+          - /url: /
+        - navigation [ref=e122]:
+          - link "Missões" [ref=e123] [cursor=pointer]:
+            - /url: /missions
+          - link "Bases" [ref=e124] [cursor=pointer]:
+            - /url: /#bases
+    - generic [ref=e126]:
+      - link "Voltar" [ref=e127] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e130]:
+        - generic [ref=e131]:
+          - paragraph [ref=e132]: Resultados
+          - heading "1 missão disponível" [level=1] [ref=e133]
+          - paragraph [ref=e134]: Base Base Lunar Alpha
+        - generic [ref=e135]:
+          - generic [ref=e137]:
+            - generic [ref=e138]: Bases lunares
+            - button "Bases lunares" [ref=e139] [cursor=pointer]:
+              - generic [ref=e140]: Base Lunar Alpha
+          - generic [ref=e144]:
+            - generic [ref=e145] [cursor=pointer]: Ordenar por
+            - combobox "Ordenar por" [ref=e146]:
+              - option "Missão mais próxima" [selected]
+              - option "Missão mais distante"
+          - button "Refinar" [ref=e147] [cursor=pointer]
+    - list [ref=e149]:
+      - listitem [ref=e150]:
+        - img "Base Lunar Alpha" [ref=e152]
+        - generic [ref=e153]:
+          - generic [ref=e154]:
+            - generic [ref=e155]: LP-0127A
+            - generic [ref=e157]: Foguete Starship
+          - heading "Base Lunar Alpha" [level=3] [ref=e158]
+          - paragraph [ref=e159]: Mar da Tranquilidade
+          - generic [ref=e160]:
+            - generic [ref=e161]: 10 de jan. de 2027 → 17 de jan. de 2027
+            - generic [ref=e165]:
+              - generic [ref=e166]: Estadia
+              - generic [ref=e167]: 7 dias
+            - generic [ref=e168]: 4 / 4 assentos
+        - generic [ref=e175]:
+          - generic [ref=e176]:
+            - paragraph [ref=e177]: a partir de
+            - paragraph [ref=e178]: USD 1,000.00
+            - paragraph [ref=e179]: por passageiro
+          - link "Reservar" [ref=e180] [cursor=pointer]:
+            - /url: /booking/LP-0127A
+  - region "Notifications alt+T"
