@@ -1,15 +1,13 @@
-import { test, expect } from '@playwright/test'
+import { test, expect } from '../support/index.ts'
 
-test('Deve verificar o título na aba do navegador', async ({ page }) => {
-  await page.goto('http://localhost:3000/')
-
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Lunar Pass/)
+test.beforeEach(async ({ app }) => {
+    await app.homePage.go()
 })
 
-test('Deve exibir o slogan na homepage', async ({ page }) => {
-  await page.goto('http://localhost:3000/')
+test('Deve verificar o título na aba do navegador', async ({ app }) => {
+    await expect(app.homePage.page).toHaveTitle(/Lunar Pass/)
+})
 
-  const slogan = page.getByRole('heading', { name: 'Sua viagem para a Lua começa aqui.' })
-  await expect(slogan).toBeVisible()
+test('Deve exibir o slogan na homepage', async ({ app }) => {
+    await expect(app.homePage.slogan).toBeVisible()
 })
