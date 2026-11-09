@@ -1,4 +1,4 @@
-import { Page, Locator } from "@playwright/test";
+import { Page, Locator } from '@playwright/test'
 
 export class DashPage {
     readonly page: Page
@@ -6,6 +6,6 @@ export class DashPage {
 
     constructor(page: Page) {
         this.page = page
-        this.addButton = page.getByRole('link', { name: 'Nova Missão' })
+        this.addButton = page.getByRole('link', { name: 'Nova missão' })
     }
 }

@@ -11,28 +11,28 @@ interface Database {
 }
 
 const dialect = new PostgresDialect({
-  pool: new Pool({
-    connectionString: process.env.DATABASE_URL,
-    ssl: {
-        rejectUnauthorized: false,
-    }
-  })
+    pool: new Pool({
+        connectionString: process.env.DATABASE_URL,
+        ssl: {
+            rejectUnauthorized: false,
+        }
+    })
 })
 
 export const db = new Kysely<Database>({
-  dialect,
-  plugins: [new CamelCasePlugin()]
+    dialect,
+    plugins: [new CamelCasePlugin()]
 })
 
 export async function cleanMission(mission: Mission) {
-  await deleteReservation(mission.id)
-  await deleteTicket(mission.id)
-  await deleteMission(mission.id)
+    await deleteReservation(mission.id)
+    await deleteTicket(mission.id)
+    await deleteMission(mission.id)
 }
 
 export async function cleanAndInsertMission(mission: Mission) {
-  await cleanMission(mission)
-  await insertMission(mission)
+    await cleanMission(mission)
+    await insertMission(mission)
 }
 
 export async function insertMission(mission: Mission) {
